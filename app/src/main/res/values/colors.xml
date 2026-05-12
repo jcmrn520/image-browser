@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="md_theme_light_primary">#1565C0</color>
+    <!-- Light Theme - Indigo/Purple 风格 -->
+    <color name="md_theme_light_primary">#5C6BC0</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_light_primaryContainer">#D6E4FF</color>
-    <color name="md_theme_light_onPrimaryContainer">#001945</color>
-    <color name="md_theme_light_secondary">#565E71</color>
+    <color name="md_theme_light_primaryContainer">#E8EAF6</color>
+    <color name="md_theme_light_onPrimaryContainer">#1A237E</color>
+    <color name="md_theme_light_secondary">#7C4DFF</color>
     <color name="md_theme_light_onSecondary">#FFFFFF</color>
-    <color name="md_theme_light_secondaryContainer">#DAE2F9</color>
-    <color name="md_theme_light_onSecondaryContainer">#131C2C</color>
-    <color name="md_theme_light_background">#FAFCFF</color>
-    <color name="md_theme_light_onBackground">#1A1C1E</color>
-    <color name="md_theme_light_surface">#FAFCFF</color>
-    <color name="md_theme_light_onSurface">#1A1C1E</color>
-    <color name="md_theme_light_surfaceVariant">#E1E2EC</color>
-    <color name="md_theme_light_onSurfaceVariant">#44464F</color>
+    <color name="md_theme_light_secondaryContainer">#EDE7F6</color>
+    <color name="md_theme_light_onSecondaryContainer">#311B92</color>
+    <color name="md_theme_light_tertiary">#26C6DA</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_background">#FAFAFA</color>
+    <color name="md_theme_light_onBackground">#1A1A2E</color>
+    <color name="md_theme_light_surface">#FFFFFF</color>
+    <color name="md_theme_light_onSurface">#1A1A2E</color>
+    <color name="md_theme_light_surfaceVariant">#F3F4FB</color>
+    <color name="md_theme_light_onSurfaceVariant">#5C5F72</color>
+    <color name="md_theme_light_outline">#C5C6D4</color>
+    <color name="md_theme_light_surfaceContainer">#EEEEF8</color>
 
-    <color name="md_theme_dark_primary">#ADC6FF</color>
-    <color name="md_theme_dark_onPrimary">#002E6E</color>
-    <color name="md_theme_dark_primaryContainer">#00459A</color>
-    <color name="md_theme_dark_onPrimaryContainer">#D6E4FF</color>
-    <color name="md_theme_dark_secondary">#BEC6DC</color>
-    <color name="md_theme_dark_onSecondary">#283041</color>
-    <color name="md_theme_dark_secondaryContainer">#3F4759</color>
-    <color name="md_theme_dark_onSecondaryContainer">#DAE2F9</color>
-    <color name="md_theme_dark_background">#1A1C1E</color>
-    <color name="md_theme_dark_onBackground">#E3E2E6</color>
-    <color name="md_theme_dark_surface">#1A1C1E</color>
-    <color name="md_theme_dark_onSurface">#E3E2E6</color>
-    <color name="md_theme_dark_surfaceVariant">#44464F</color>
-    <color name="md_theme_dark_onSurfaceVariant">#C5C6D0</color>
+    <!-- Dark Theme -->
+    <color name="md_theme_dark_primary">#9FA8DA</color>
+    <color name="md_theme_dark_onPrimary">#1A237E</color>
+    <color name="md_theme_dark_primaryContainer">#3949AB</color>
+    <color name="md_theme_dark_onPrimaryContainer">#E8EAF6</color>
+    <color name="md_theme_dark_secondary">#B39DDB</color>
+    <color name="md_theme_dark_onSecondary">#311B92</color>
+    <color name="md_theme_dark_secondaryContainer">#512DA8</color>
+    <color name="md_theme_dark_onSecondaryContainer">#EDE7F6</color>
+    <color name="md_theme_dark_tertiary">#80DEEA</color>
+    <color name="md_theme_dark_onTertiary">#004D40</color>
+    <color name="md_theme_dark_background">#12121F</color>
+    <color name="md_theme_dark_onBackground">#E8E8F5</color>
+    <color name="md_theme_dark_surface">#1E1E30</color>
+    <color name="md_theme_dark_onSurface">#E8E8F5</color>
+    <color name="md_theme_dark_surfaceVariant">#2A2A3E</color>
+    <color name="md_theme_dark_onSurfaceVariant">#A8A9BE</color>
+    <color name="md_theme_dark_outline">#44445A</color>
+    <color name="md_theme_dark_surfaceContainer">#252538</color>
 
-    <color name="ic_launcher_bg">#1565C0</color>
+    <color name="ic_launcher_bg">#5C6BC0</color>
+    <color name="black_alpha_60">#99000000</color>
+    <color name="white_alpha_80">#CCFFFFFF</color>
 </resources>
