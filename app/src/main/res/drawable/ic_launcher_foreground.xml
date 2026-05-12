@@ -5,8 +5,50 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
 
+    <!-- 相框外框（白色圆角矩形） -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:pathData="M30,28 Q28,28 28,30 L28,78 Q28,80 30,80 L78,80 Q80,80 80,78 L80,30 Q80,28 78,28 Z" />
+
+    <!-- 山景：远山（浅蓝白） -->
+    <path
+        android:fillColor="#B3E5FC"
+        android:pathData="M28,68 L42,50 L52,60 L63,44 L80,68 Z" />
+
+    <!-- 山景：近山（白色） -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M66,45v-6c0,-2.2 -1.8,-4 -4,-4H46c-2.2,0 -4,1.8 -4,4v24c0,2.2 1.8,4 4,4h24c2.2,0 4,-1.8 4,-4v-6l8,8V37L66,45zM62,63H46V39h16v24zM54,41c-2.2,0 -4,1.8 -4,4s1.8,4 4,4 4,-1.8 4,-4 -1.8,-4 -4,-4zM46,59l4,-5 3,3.6 4,-5.1 6,7.5H46z" />
+        android:pathData="M28,80 L28,64 L40,54 L50,64 L58,56 L70,68 L80,60 L80,80 Z" />
+
+    <!-- 太阳（黄白色圆） -->
+    <circle
+        android:fillColor="#FFF9C4"
+        android:cx="62"
+        android:cy="40"
+        android:r="7" />
+
+    <!-- 太阳光芒 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFF9C4"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M62,30 L62,27 M62,53 L62,50 M72,40 L75,40 M49,40 L52,40 M69,33 L71,31 M53,33 L51,31 M69,47 L71,49 M53,47 L51,49" />
+
+    <!-- 相机镜头圆环（右下角点缀） -->
+    <circle
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:cx="38"
+        android:cy="38"
+        android:r="5" />
+    <circle
+        android:fillColor="#FFFFFF"
+        android:cx="38"
+        android:cy="38"
+        android:r="2" />
 
 </vector>
