@@ -40,4 +40,8 @@ dependencies {
     annotationProcessor(libs.glide.compiler)
     implementation(libs.photoview)
     implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.androidx.exifinterface)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.cardview)
 }
