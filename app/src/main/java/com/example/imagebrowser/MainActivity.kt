@@ -1,15 +1,18 @@
 package com.example.imagebrowser
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.imagebrowser.databinding.ActivityMainBinding
-import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
@@ -21,12 +24,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityMainBinding
+    private var viewPagerSetup = false
 
     private val permLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { perms ->
-        if (perms.values.any { it }) setupViewPager()
-        else showPermissionDenied()
+        if (perms.values.any { it }) {
+            setupViewPager()
+        } else {
+            showPermissionDenied()
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,13 +42,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(true)
+        checkAndRequestPermission()
+    }
 
-        if (hasPermission()) setupViewPager()
-        else if (shouldShow()) showRationale()
-        else requestPerm()
+    override fun onResume() {
+        super.onResume()
+        // 从设置页面回来后，重新检查权限
+        if (!viewPagerSetup && hasPermission()) {
+            setupViewPager()
+        }
+    }
+
+    private fun checkAndRequestPermission() {
+        when {
+            hasPermission() -> setupViewPager()
+            else -> requestPerm()
+        }
     }
 
     private fun setupViewPager() {
+        if (viewPagerSetup) return
+        viewPagerSetup = true
+
+        binding.tabLayout.visibility = View.VISIBLE
+        binding.viewPager.visibility = View.VISIBLE
+        binding.layoutPermissionDenied.visibility = View.GONE
+
         val adapter = MainPagerAdapter(this)
         binding.viewPager.adapter = adapter
         binding.viewPager.offscreenPageLimit = 2
@@ -62,25 +88,33 @@ class MainActivity : AppCompatActivity() {
 
     private fun hasPermission() = if (Build.VERSION.SDK_INT >= 33)
         ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED
-    else ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+    else
+        ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
 
-    private fun shouldShow() = if (Build.VERSION.SDK_INT >= 33)
-        shouldShowRequestPermissionRationale(Manifest.permission.READ_MEDIA_IMAGES)
-    else shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)
-
-    private fun requestPerm() = permLauncher.launch(
-        if (Build.VERSION.SDK_INT >= 33) arrayOf(Manifest.permission.READ_MEDIA_IMAGES)
-        else arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
-    )
-
-    private fun showRationale() {
-        Snackbar.make(binding.root, "需要读取存储权限才能浏览图片", Snackbar.LENGTH_INDEFINITE)
-            .setAction("授予权限") { requestPerm() }.show()
+    private fun requestPerm() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            permLauncher.launch(arrayOf(Manifest.permission.READ_MEDIA_IMAGES))
+        } else {
+            permLauncher.launch(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE))
+        }
     }
 
     private fun showPermissionDenied() {
         binding.tabLayout.visibility = View.GONE
         binding.viewPager.visibility = View.GONE
-        Snackbar.make(binding.root, "存储权限被拒绝，请在设置中开启", Snackbar.LENGTH_LONG).show()
+        binding.layoutPermissionDenied.visibility = View.VISIBLE
+
+        binding.btnGoToSettings.setOnClickListener {
+            // 引导用户去系统设置手动开启权限
+            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                data = Uri.fromParts("package", packageName, null)
+            }
+            startActivity(intent)
+        }
+
+        binding.btnRetryPermission.setOnClickListener {
+            viewPagerSetup = false
+            checkAndRequestPermission()
+        }
     }
 }
