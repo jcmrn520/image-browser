@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <solid android:color="#1565C0" />
-</shape>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 蓝紫渐变背景 -->
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="108"
+                android:endY="108"
+                android:type="linear">
+                <item android:offset="0" android:color="#FF5C6BC0"/>
+                <item android:offset="0.5" android:color="#FF7C4DFF"/>
+                <item android:offset="1" android:color="#FF7E57C2"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 装饰光晕（左上） -->
+    <circle
+        android:cx="15"
+        android:cy="15"
+        android:r="20"
+        android:fillColor="#1AFFFFFF" />
+
+    <!-- 装饰光晕（右下） -->
+    <circle
+        android:cx="95"
+        android:cy="95"
+        android:r="25"
+        android:fillColor="#1AFFFFFF" />
+
+</vector>
