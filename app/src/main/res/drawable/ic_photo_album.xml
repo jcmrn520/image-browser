@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- 底层相片（偏移，灰色） -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="?attr/colorOnSurfaceVariant"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:pathData="M5,7 Q4,7 4,8 L4,18 Q4,19 5,19 L17,19 Q18,19 18,18 L18,8 Q18,7 17,7 Z" />
+
+    <!-- 中层相片（稍偏移） -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="?attr/colorOnSurfaceVariant"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:pathData="M7,5 Q6,5 6,6 L6,16 Q6,17 7,17 L19,17 Q20,17 20,16 L20,6 Q20,5 19,5 Z" />
+
+    <!-- 前层相片（主图，带填充） -->
+    <path
+        android:fillColor="?attr/colorSurface"
+        android:strokeColor="?attr/colorPrimary"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:pathData="M9,3 Q8,3 8,4 L8,14 Q8,15 9,15 L21,15 Q22,15 22,14 L22,4 Q22,3 21,3 Z" />
+
+    <!-- 前层：山景 -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M8,12 L12,8 L15,11 L18,7.5 L22,12 Z" />
+
+    <!-- 前层：太阳 -->
+    <circle
+        android:cx="11.5"
+        android:cy="6"
+        android:r="1.5"
+        android:fillColor="?attr/colorPrimary" />
+
+</vector>
