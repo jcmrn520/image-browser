@@ -5,50 +5,39 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- 相框外框（白色圆角矩形） -->
+    <!-- 相框外框（白色圆角矩形描边） -->
     <path
         android:fillColor="#00000000"
         android:strokeColor="#FFFFFF"
         android:strokeWidth="3"
-        android:pathData="M30,28 Q28,28 28,30 L28,78 Q28,80 30,80 L78,80 Q80,80 80,78 L80,30 Q80,28 78,28 Z" />
+        android:pathData="M32,30 Q30,30 30,32 L30,76 Q30,78 32,78 L76,78 Q78,78 78,76 L78,32 Q78,30 76,30 Z" />
 
-    <!-- 山景：远山（浅蓝白） -->
+    <!-- 天空背景（浅蓝） -->
     <path
         android:fillColor="#B3E5FC"
-        android:pathData="M28,68 L42,50 L52,60 L63,44 L80,68 Z" />
+        android:pathData="M30,30 L78,30 L78,62 L62,46 L52,58 L42,50 L30,62 Z" />
 
-    <!-- 山景：近山（白色） -->
+    <!-- 远山（白色） -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M28,80 L28,64 L40,54 L50,64 L58,56 L70,68 L80,60 L80,80 Z" />
+        android:alpha="0.7"
+        android:pathData="M30,78 L30,60 L42,48 L52,58 L62,46 L78,62 L78,78 Z" />
 
-    <!-- 太阳（黄白色圆） -->
-    <circle
-        android:fillColor="#FFF9C4"
-        android:cx="62"
-        android:cy="40"
-        android:r="7" />
-
-    <!-- 太阳光芒 -->
+    <!-- 太阳（白色实心圆，用path画） -->
     <path
-        android:fillColor="#00000000"
-        android:strokeColor="#FFF9C4"
-        android:strokeWidth="2"
-        android:strokeLineCap="round"
-        android:pathData="M62,30 L62,27 M62,53 L62,50 M72,40 L75,40 M49,40 L52,40 M69,33 L71,31 M53,33 L51,31 M69,47 L71,49 M53,47 L51,49" />
+        android:fillColor="#FFF9C4"
+        android:pathData="M65,38 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
 
-    <!-- 相机镜头圆环（右下角点缀） -->
-    <circle
+    <!-- 相机镜头外圆 -->
+    <path
         android:fillColor="#00000000"
         android:strokeColor="#FFFFFF"
-        android:strokeWidth="2.5"
-        android:cx="38"
-        android:cy="38"
-        android:r="5" />
-    <circle
+        android:strokeWidth="2"
+        android:pathData="M39,40 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+
+    <!-- 相机镜头内圆（实心小圆） -->
+    <path
         android:fillColor="#FFFFFF"
-        android:cx="38"
-        android:cy="38"
-        android:r="2" />
+        android:pathData="M39,40 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0" />
 
 </vector>
