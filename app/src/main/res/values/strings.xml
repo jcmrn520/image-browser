@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">图片浏览器</string>
+    <string name="image_count">共 %1$d 张图片</string>
+    <string name="no_images_found">未找到图片\n请确保设备上有图片文件</string>
+    <string name="permission_rationale">需要读取存储权限才能浏览图片</string>
+    <string name="permission_denied_message">存储权限被拒绝\n请在设置中授予权限后重启应用</string>
+    <string name="grant_permission">授予权限</string>
+    <string name="back">返回</string>
+    <string name="full_screen_image">全屏图片</string>
+</resources>
